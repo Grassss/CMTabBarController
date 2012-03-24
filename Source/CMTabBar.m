@@ -42,7 +42,8 @@
         self.backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [self addSubview:self.backgroundImageView];
         
-        self.selectedImageView = [[[UIImageView alloc] initWithImage:[self defaultSelectionIndicatorImage]] autorelease];
+        self.selectedImageView = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.height, frame.size.height)] autorelease];
+        self.selectedImageView.image = [self defaultSelectionIndicatorImage];
         self.selectedImageView.contentMode = UIViewContentModeBottom;
         self.selectedImageView.backgroundColor = [UIColor clearColor];
         self.selectedImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
@@ -212,6 +213,7 @@
 - (void)moveArrowPostionForButton:(UIButton*)button {
     [UIView animateWithDuration:0.1 animations:^{
         self.backgroundImageView.center = CGPointMake(button.center.x, self.backgroundImageView.center.y);
+        self.backgroundImageView.frame = CGRectIntegral(self.backgroundImageView.frame);
     }];
 }
 

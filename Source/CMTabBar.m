@@ -103,11 +103,11 @@
             self.useGlossEffect = YES;
             self.backgroundImageView.image = [self defaultBackgroundImage];
         } else if (tabBarStyle == CMTabBarStyleTranslucent) {
-            self.backgroundImageView.alpha = 0.7f;
+            self.backgroundImageView.alpha = 0.8f;
             self.useGlossEffect = NO;
             self.backgroundImageView.image = [self defaultBackgroundImage];
         } else if (tabBarStyle == CMTabBarStyleTranslucentGloss) {
-            self.backgroundImageView.alpha = 0.7f;
+            self.backgroundImageView.alpha = 0.8f;
             self.useGlossEffect = YES;
             self.backgroundImageView.image = [self defaultBackgroundImage];
         }
